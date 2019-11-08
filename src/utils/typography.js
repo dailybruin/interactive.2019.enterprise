@@ -8,6 +8,14 @@ const typography = new Typography({
       name: 'Libre Baskerville',
       styles: ['400'],
     },
+    {
+      name: 'IBM Plex Mono',
+      styles: ['400'],
+    },
+    {
+      name: 'Heebo',
+      styles: ['400'],
+    },
   ],
   headerFontFamily: ['Georgia', 'serif'],
   bodyFontFamily: ['Libre Baskerville', 'serif'],
