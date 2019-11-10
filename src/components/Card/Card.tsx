@@ -13,7 +13,7 @@ const OutDiv = styled('div')`
   color: #fefbf4;
   background-color: black;
   flex-direction: column;
-  @media only screen and (max-width: 375px) {
+  @media only screen and (max-width: 800px) {
     font-size: 37px;
     line-height: 48px;
     padding: 15px;
@@ -27,10 +27,10 @@ const Blurb = styled('p')`
   text-align: center;
   width: 60%;
   color: #fefbf4;
-  @media only screen and (max-width: 375px) {
+  @media only screen and (max-width: 800px) {
     font-size: 14px;
     line-height: 21px;
-    width: 80%;
+    width: 70%;
   }
 `
 const Box = styled('div')`
@@ -41,8 +41,8 @@ const Box = styled('div')`
   box-shadow: 0 0 5px 2px #282a2d;
   margin-right: 10px;
   margin-bottom: 20px;
-  @media only screen and (max-width: 375px) {
-    width: 80%;
+  @media only screen and (max-width: 800px) {
+    width: 75%;
     margin-right: 0px;
     flex-direction: column;
   }
@@ -55,7 +55,7 @@ const InnerBox = styled('div')`
   margin-right: 10px;
   display: flex;
   flex-direction: column;
-  @media only screen and (max-width: 375px) {
+  @media only screen and (max-width: 800px) {
     width: 100%;
     margin: 0px;
   }
@@ -69,21 +69,18 @@ const BoxTitle = styled('div')`
   font-weight: bold;
   font-size: 28px;
   line-height: 36px;
-  display: flex;
   align-items: left;
   color: #fffcf5;
   text-align: left;
   padding-left: 20px;
   padding-top: 15px;
   padding-bottom: 20px;
-  font-family: IBM Plex Mono;
-  @media only screen and (max-width: 375px) {
+  @media only screen and (max-width: 800px) {
     font-size: 18px;
     line-height: 23px;
     padding-left: 0px;
     padding-right: 0px;
     flex-direction: column;
-    text-align: center;
   }
 `
 
@@ -100,12 +97,11 @@ const BoxContent = styled('div')`
   text-align: left;
   padding-left: 20px;
   padding-bottom: 15px;
-  @media only screen and (max-width: 375px) {
+  @media only screen and (max-width: 800px) {
     font-size: 13px;
     line-height: 19px;
     padding-left: 0px;
     flex-direction: column;
-    text-align: center;
   }
 `
 
@@ -114,8 +110,20 @@ const BoxImage = styled('div')`
   margin: 15px;
   flex-grow: 2;
   background: url(${Picture});
-  @media only screen and (max-width: 375px) {
+  padding: 15px;
+  @media only screen and (max-width: 800px) {
     flex-direction: column;
+    padding: 20%;
+    width: 50%;
+    margin: auto;
+    margin-top: 20px;
+  }
+  @media only screen and (max-width: 414px) {
+    flex-direction: column;
+    padding: 35%;
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
   }
 `
 
@@ -133,138 +141,6 @@ export default class Card extends React.Component {
             blurb here blurb here blurb here
           </p>
         </Blurb>
-        <Box>
-          <BoxImage />
-          <InnerBox>
-            <BoxTitle>
-              Here be a title here be a title here be a title here be a title
-              here
-            </BoxTitle>
-            <BoxContent>
-              stop leaving the faucet on while you brush your teeth that is so
-              wasteful geez stop leaving the faucet on while you brush your
-              teeth that is so wasteful geez
-            </BoxContent>
-          </InnerBox>
-        </Box>
-        <Box>
-          <BoxImage />
-          <InnerBox>
-            <BoxTitle>
-              Here be a title here be a title here be a title here be a title
-              here
-            </BoxTitle>
-            <BoxContent>
-              stop leaving the faucet on while you brush your teeth that is so
-              wasteful geez stop leaving the faucet on while you brush your
-              teeth that is so wasteful geez
-            </BoxContent>
-          </InnerBox>
-        </Box>
-        <Box>
-          <BoxImage />
-          <InnerBox>
-            <BoxTitle>
-              Here be a title here be a title here be a title here be a title
-              here
-            </BoxTitle>
-            <BoxContent>
-              stop leaving the faucet on while you brush your teeth that is so
-              wasteful geez stop leaving the faucet on while you brush your
-              teeth that is so wasteful geez
-            </BoxContent>
-          </InnerBox>
-        </Box>
-        <p>INSERT TOPIC 2 HERE</p>
-        <Blurb>
-          <p>
-            blurb here blurb here blurb here blurb here blurb here blurb here
-            blurb here blurb here blurb here blurb here blurb here blurb here
-            blurb here blurb here blurb here blurb here blurb here blurb here
-            blurb here blurb here blurb here blurb here blurb here blurb here
-            blurb here blurb here blurb here
-          </p>
-        </Blurb>
-        <Box>
-          <BoxImage />
-          <InnerBox>
-            <BoxTitle>
-              Here be a title here be a title here be a title here be a title
-              here
-            </BoxTitle>
-            <BoxContent>
-              stop leaving the faucet on while you brush your teeth that is so
-              wasteful geez stop leaving the faucet on while you brush your
-              teeth that is so wasteful geez
-            </BoxContent>
-          </InnerBox>
-        </Box>
-        <Box>
-          <BoxImage />
-          <InnerBox>
-            <BoxTitle>
-              Here be a title here be a title here be a title here be a title
-              here
-            </BoxTitle>
-            <BoxContent>
-              stop leaving the faucet on while you brush your teeth that is so
-              wasteful geez stop leaving the faucet on while you brush your
-              teeth that is so wasteful geez
-            </BoxContent>
-          </InnerBox>
-        </Box>
-        <Box>
-          <BoxImage />
-          <InnerBox>
-            <BoxTitle>
-              Here be a title here be a title here be a title here be a title
-              here
-            </BoxTitle>
-            <BoxContent>
-              stop leaving the faucet on while you brush your teeth that is so
-              wasteful geez stop leaving the faucet on while you brush your
-              teeth that is so wasteful geez
-            </BoxContent>
-          </InnerBox>
-        </Box>
-        <p>INSERT TOPIC 3 HERE</p>
-        <Blurb>
-          <p>
-            blurb here blurb here blurb here blurb here blurb here blurb here
-            blurb here blurb here blurb here blurb here blurb here blurb here
-            blurb here blurb here blurb here blurb here blurb here blurb here
-            blurb here blurb here blurb here blurb here blurb here blurb here
-            blurb here blurb here blurb here
-          </p>
-        </Blurb>
-        <Box>
-          <BoxImage />
-          <InnerBox>
-            <BoxTitle>
-              Here be a title here be a title here be a title here be a title
-              here
-            </BoxTitle>
-            <BoxContent>
-              stop leaving the faucet on while you brush your teeth that is so
-              wasteful geez stop leaving the faucet on while you brush your
-              teeth that is so wasteful geez
-            </BoxContent>
-          </InnerBox>
-        </Box>
-        <Box>
-          <BoxImage />
-          <InnerBox>
-            <BoxTitle>
-              Here be a title here be a title here be a title here be a title
-              here
-            </BoxTitle>
-            <BoxContent>
-              stop leaving the faucet on while you brush your teeth that is so
-              wasteful geez stop leaving the faucet on while you brush your
-              teeth that is so wasteful geez
-            </BoxContent>
-          </InnerBox>
-        </Box>
         <Box>
           <BoxImage />
           <InnerBox>

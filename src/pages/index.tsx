@@ -11,32 +11,32 @@ import {
 import Card from '../components/Card/Card'
 import NavBar from '../components/NavBar/NavBar'
 
-// export const query = graphql`
-//   query {
-//     site {
-//       siteMetadata {
-//         siteName
-//         description
-//         url
-//         image
-//       }
-//     }
-//     // kerckhoffArticle {
-//     //   headline
-//     //   author
-//     //   content {
-//     //     type
-//     //     value
-//     //   }
-//     // }
-//   }
-// `
+export const query = graphql`
+  query {
+    site {
+      siteMetadata {
+        siteName
+        description
+        url
+        image
+      }
+    }
+    kerckhoffArticle {
+      headline
+      author
+      content {
+        type
+        value
+      }
+    }
+  }
+`
 
 const IndexPage = ({ data }) => (
   <>
-    {/* <Head {...data.site.siteMetadata} /> */}
+    <Head {...data.site.siteMetadata} />
     <Card />
-    {/* <CoverPhoto
+    <CoverPhoto
       headline={data.kerckhoffArticle.headline}
       authors={data.kerckhoffArticle.author}
       imageURL="https://chancellor.ucla.edu/wp-content/uploads/2018/07/ChancellorBlock_1366x912_acf_cropped.jpg"
@@ -44,7 +44,7 @@ const IndexPage = ({ data }) => (
       yPosition={YPosition.Center}
     />
     <Article dropcap={true} content={data.kerckhoffArticle.content} />
-    <Footer developers="Nathan Smith" copyrightYear={2018} /> */}
+    <Footer developers="Nathan Smith" copyrightYear={2018} />
   </>
 )
 
