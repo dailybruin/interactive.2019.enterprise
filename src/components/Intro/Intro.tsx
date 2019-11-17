@@ -10,7 +10,7 @@ const OutDiv = styled('div')`
 `
 
 const Title = styled('div')`
-  font-family: IBM Plex Mono;
+  font-family: IBM Plex Sans;
   text-transform: uppercase;
   font-size: 75px;
   line-height: 97px;
@@ -41,9 +41,12 @@ const Cred = styled('div')`
 `
 
 const Name = styled('div')`
-  padding-left: 5px;
   border-bottom: 2px solid #6d786a;
   padding-bottom: 1px;
+`
+
+const NameSpace = styled('div')`
+  padding-left: 5px;
 `
 
 const Content = styled('div')`
@@ -57,6 +60,7 @@ const Content = styled('div')`
   @media only screen and (max-width: 800px) {
     font-size: 16px;
     line-height: 23px;
+    width: 80%;
   }
 `
 export default class Intro extends React.Component {
@@ -65,7 +69,10 @@ export default class Intro extends React.Component {
       <OutDiv>
         <Title>Let's not kill the earth</Title>
         <Cred>
-          By <Name> Daily Bruin Contributor</Name>
+          By{' '}
+          <NameSpace>
+            <Name>Daily Bruin Contributor</Name>
+          </NameSpace>
         </Cred>
         <Content>
           body text lives here! i hope you are having a great day. body text

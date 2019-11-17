@@ -13,6 +13,10 @@ const typography = new Typography({
       styles: ['400'],
     },
     {
+      name: 'IBM Plex Sans',
+      styles: ['400'],
+    },
+    {
       name: 'Heebo',
       styles: ['400'],
     },
