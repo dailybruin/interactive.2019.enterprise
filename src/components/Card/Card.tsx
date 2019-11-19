@@ -80,6 +80,7 @@ const BoxTitle = styled('div')`
     line-height: 23px;
     padding-left: 0px;
     padding-right: 0px;
+    text-align: center;
     flex-direction: column;
   }
 `
@@ -100,7 +101,7 @@ const BoxContent = styled('div')`
   @media only screen and (max-width: 800px) {
     font-size: 13px;
     line-height: 19px;
-    padding-left: 0px;
+    padding-left: 10px;
     flex-direction: column;
   }
 `

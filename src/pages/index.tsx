@@ -9,7 +9,7 @@ import {
   YPosition,
 } from '@dailybruin/lux'
 import Card from '../components/Card/Card'
-import NavBar from '../components/NavBar/NavBar'
+import Intro from '../components/Intro/Intro'
 
 export const query = graphql`
   query {
@@ -35,6 +35,7 @@ export const query = graphql`
 const IndexPage = ({ data }) => (
   <>
     <Head {...data.site.siteMetadata} />
+    <Intro />
     <Card />
     <CoverPhoto
       headline={data.kerckhoffArticle.headline}
