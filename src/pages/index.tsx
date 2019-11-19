@@ -8,6 +8,8 @@ import {
   XPosition,
   YPosition,
 } from '@dailybruin/lux'
+import Card from '../components/Card/Card'
+import NavBar from '../components/NavBar/NavBar'
 
 export const query = graphql`
   query {
@@ -29,9 +31,11 @@ export const query = graphql`
     }
   }
 `
+
 const IndexPage = ({ data }) => (
   <>
     <Head {...data.site.siteMetadata} />
+    <Card />
     <CoverPhoto
       headline={data.kerckhoffArticle.headline}
       authors={data.kerckhoffArticle.author}
