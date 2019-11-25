@@ -9,6 +9,8 @@ import {
   YPosition,
 } from '@dailybruin/lux'
 
+import { Navbar } from './navbar'
+
 export const query = graphql`
   query {
     site {
@@ -38,6 +40,18 @@ const IndexPage = ({ data }) => (
       imageURL="https://chancellor.ucla.edu/wp-content/uploads/2018/07/ChancellorBlock_1366x912_acf_cropped.jpg"
       xPosition={XPosition.Center}
       yPosition={YPosition.Center}
+    />
+    <Navbar
+      title={'MAIN TITLE'}
+      entries={[
+        { id: 'MAINTITLE', title: 'MAIN TITLE' },
+        { id: 'tech', title: 'Tech' },
+        { id: '3', title: 'Part 3' },
+        // { id: 'international', title: 'International' },
+        { id: '4', title: 'Part 4' },
+        { id: '5', title: 'Part 5' },
+      ]}
+      selectedId={'housing'}
     />
     <Article dropcap={true} content={data.kerckhoffArticle.content} />
     <Footer developers="Nathan Smith" copyrightYear={2018} />
