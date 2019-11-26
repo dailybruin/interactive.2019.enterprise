@@ -18,8 +18,9 @@ export class Navbar extends Component<INavbarProps> {
     return (
       <div
         className={css`
-          font-family: 'Open Sans Condensed', sans-serif;
+          font-family: 'IBM Plex Mono';
           position: sticky;
+          color: #fffcf5;
           top: 0;
           z-index: 100;
         `}
@@ -167,7 +168,7 @@ class MobileNavbar extends Component<INavbarProps, IMobileNavbarState> {
         <div
           className={css`
             color: #004c76;
-            font-family: 'Open Sans Condensed', sans-serif;
+            font-family: 'IBM Plex Mono';
             font-size: 1.2rem;
             padding-top: 1rem;
             padding-left: 2rem;
