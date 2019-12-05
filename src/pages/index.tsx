@@ -22,11 +22,18 @@ export const query = graphql`
       }
     }
     kerckhoffArticle {
-      headline
-      author
-      content {
-        type
-        value
+      PageTitle
+      Explainer
+      ImageURL
+      ImageCreds
+      Categories {
+        CategoryName
+        Cards {
+          Title
+          ImageURL
+          Contributor
+          Blurb
+        }
       }
     }
   }
@@ -34,17 +41,18 @@ export const query = graphql`
 
 const IndexPage = ({ data }) => (
   <>
+    {console.log(data)}
     <Head {...data.site.siteMetadata} />
     <Intro />
     <Card />
-    <CoverPhoto
+    {/* <CoverPhoto
       headline={data.kerckhoffArticle.headline}
       authors={data.kerckhoffArticle.author}
       imageURL="https://chancellor.ucla.edu/wp-content/uploads/2018/07/ChancellorBlock_1366x912_acf_cropped.jpg"
       xPosition={XPosition.Center}
       yPosition={YPosition.Center}
-    />
-    <Article dropcap={true} content={data.kerckhoffArticle.content} />
+    /> */}
+    {/* <Article dropcap={true} content={data.kerckhoffArticle.content} /> */}
     <Footer developers="Nathan Smith" copyrightYear={2018} />
   </>
 )
