@@ -10,6 +10,7 @@ import {
 } from '@dailybruin/lux'
 import Card from '../components/Card/Card'
 import Intro from '../components/Intro/Intro'
+import Cover from '../components/Cover/Cover'
 
 export const query = graphql`
   query {
@@ -43,17 +44,14 @@ const IndexPage = ({ data }) => (
   <>
     {console.log(data)}
     <Head {...data.site.siteMetadata} />
+    <Cover />
     <Intro />
     <Card />
-    {/* <CoverPhoto
-      headline={data.kerckhoffArticle.headline}
-      authors={data.kerckhoffArticle.author}
-      imageURL="https://chancellor.ucla.edu/wp-content/uploads/2018/07/ChancellorBlock_1366x912_acf_cropped.jpg"
-      xPosition={XPosition.Center}
-      yPosition={YPosition.Center}
-    /> */}
-    {/* <Article dropcap={true} content={data.kerckhoffArticle.content} /> */}
-    <Footer developers="Nathan Smith" copyrightYear={2018} />
+    <Article dropcap={true} content={data.kerckhoffArticle.content} />
+    <Footer
+      developers="Henry Trinh, Karl Huang, Jay Park, Matthew Ko, Max Wu"
+      copyrightYear={2018}
+    />
   </>
 )
 
