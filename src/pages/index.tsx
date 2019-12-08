@@ -45,14 +45,17 @@ const IndexPage = ({ data }) => (
     {console.log(data.kerckhoffArticle.Categories)}
     <Head {...data.site.siteMetadata} />
     <Cover />
-    <Intro />
+    <Intro
+      PageTitle={data.kerckhoffArticle.PageTitle}
+      Explainer={data.kerckhoffArticle.Explainer}
+    />
     {data.kerckhoffArticle.Categories.map(category => (
       <Card {...category} />
     ))}
     {/* <Article dropcap={true} content={data.kerckhoffArticle.content} /> */}
     <Footer
       developers="Henry Trinh, Karl Huang, Jay Park, Matthew Ko, Max Wu"
-      copyrightYear={2018}
+      copyrightYear={2019}
     />
   </>
 )

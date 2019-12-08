@@ -69,33 +69,24 @@ const Content = styled('div')`
     width: 80%;
   }
 `
-export default class Intro extends React.Component {
+
+interface IntroProps {
+  PageTitle: string
+  Explainer: string
+}
+
+export default class Intro extends React.Component<IntroProps> {
   render() {
     return (
       <OutDiv>
-        <Title>Let's not kill the earth</Title>
-        <Cred>
+        <Title>{this.props.PageTitle}</Title>
+        {/* <Cred>
           By{' '}
           <NameSpace>
             <Name>Daily Bruin Contributor</Name>
           </NameSpace>
-        </Cred>
-        <Content>
-          body text lives here! i hope you are having a great day. body text
-          lives here! i hope you are having a great day. body text lives here! i
-          hope you are having a great day. body text lives here! i hope you are
-          having a great day. body text lives here! i hope you are having a
-          great day. body text lives here! i hope you are having a great day.
-          body text lives here! i hope you are having a great day. body text
-          lives here! i hope you are having a great day. body text lives here! i
-          hope you are having a great day. body text lives here! i hope you are
-          having a great day. body text lives here! i hope you are having a
-          great day. body text lives here! i hope you are having a great day.
-          body text lives here! i hope you are having a great day. body text
-          lives here! i hope you are having a great day. body text lives here! i
-          hope you are having a great day. body text lives here! i hope you are
-          having a great day. body text lives here! i hope you are having a
-        </Content>
+        </Cred> */}
+        <Content>{this.props.Explainer}</Content>
       </OutDiv>
     )
   }
