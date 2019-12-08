@@ -33,6 +33,7 @@ export const query = graphql`
       Categories {
         CategoryName
         Cards {
+          PageLink
           Title
           ImageURL
           Contributor
@@ -54,7 +55,6 @@ const Page = styled('div')`
 const Divide = styled('hr')`
   background: #fefbf4;
   width: 80%;
-  margin-top: 7vh;
 `
 
 const IndexPage = ({ data }) => (
@@ -68,7 +68,7 @@ const IndexPage = ({ data }) => (
     />
     <Page>
       {data.kerckhoffArticle.Categories.map(category => (
-        <Card {...category} />
+        <Card {...category} id={category.CategoryName.replace(' ', '')} />
       ))}
       <Divide />
       <Footer
