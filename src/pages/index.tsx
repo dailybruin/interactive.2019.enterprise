@@ -47,7 +47,7 @@ const IndexPage = ({ data }) => (
     <Cover />
     <Intro />
     <Card />
-    <Article dropcap={true} content={data.kerckhoffArticle.content} />
+    {/* <Article dropcap={true} content={data.kerckhoffArticle.content} /> */}
     <Footer
       developers="Henry Trinh, Karl Huang, Jay Park, Matthew Ko, Max Wu"
       copyrightYear={2018}

@@ -11,6 +11,7 @@ const Wrapper = styled('div')`
   height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
 `
 
 export default class Cover extends React.Component<
@@ -41,6 +42,8 @@ export default class Cover extends React.Component<
     let pos3 = `${50 - (mouseX - windowwidth) * 0.06}% ${50 -
       (mouseY - windowheight) * 0.06}%`
     elem.style.backgroundPosition = pos3 + ', ' + pos2 + ', ' + pos1
+
+    console.log(elem.style.backgroundSize)
   }
   render() {
     return (
