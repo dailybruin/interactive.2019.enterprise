@@ -8,9 +8,12 @@ import {
   XPosition,
   YPosition,
 } from '@dailybruin/lux'
+import styled from 'react-emotion'
+import { css } from 'react-emotion'
 import Card from '../components/Card/Card'
 import Intro from '../components/Intro/Intro'
 import Cover from '../components/Cover/Cover'
+import Recycle from '../images/recycle.svg'
 
 export const query = graphql`
   query {
@@ -40,6 +43,20 @@ export const query = graphql`
   }
 `
 
+const Page = styled('div')`
+  background-color: #6d786a;
+  background-image: url(${Recycle});
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
+const Divide = styled('hr')`
+  background: #fefbf4;
+  width: 80%;
+  margin-top: 7vh;
+`
+
 const IndexPage = ({ data }) => (
   <>
     {console.log(data.kerckhoffArticle.Categories)}
@@ -49,14 +66,21 @@ const IndexPage = ({ data }) => (
       PageTitle={data.kerckhoffArticle.PageTitle}
       Explainer={data.kerckhoffArticle.Explainer}
     />
-    {data.kerckhoffArticle.Categories.map(category => (
-      <Card {...category} />
-    ))}
-    {/* <Article dropcap={true} content={data.kerckhoffArticle.content} /> */}
-    <Footer
-      developers="Henry Trinh, Karl Huang, Jay Park, Matthew Ko, Max Wu"
-      copyrightYear={2019}
-    />
+    <Page>
+      {data.kerckhoffArticle.Categories.map(category => (
+        <Card {...category} />
+      ))}
+      <Divide />
+      <Footer
+        developers="Henry Trinh, Karl Huang, Jay Park, Matthew Ko, Max Wu"
+        copyrightYear={2019}
+        style={css`
+          margin-bottom: 0px;
+          padding-bottom: 30px;
+          color: #fefbf4;
+        `}
+      />
+    </Page>
   </>
 )
 

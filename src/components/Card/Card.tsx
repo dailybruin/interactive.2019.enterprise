@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'react-emotion'
 import { css } from 'react-emotion'
 import Picture from '../../images/graybox.png'
-import Recycle from '../../images/recycle.svg'
 
 const OutDiv = styled('div')`
   display: flex;
@@ -13,8 +12,6 @@ const OutDiv = styled('div')`
   align-items: center;
   text-align: center;
   color: #fefbf4;
-  background-color: #6d786a;
-  background-image: url(${Recycle});
   flex-direction: column;
   padding: 1.5vh;
   @media only screen and (max-width: 800px) {

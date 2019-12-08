@@ -55,6 +55,7 @@ const NameSpace = styled('div')`
 `
 
 const Content = styled('div')`
+  margin-top: 3vh;
   font-family: Heebo;
   font-size: 18px;
   line-height: 26px;
