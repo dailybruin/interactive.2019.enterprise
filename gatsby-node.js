@@ -7,7 +7,12 @@ exports.createPages = async ({ graphql, actions }) => {
   // see: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise for more info
   const { createPage } = actions
 
-  const articleNames = ['article1.aml', 'article2.aml']
+  const articleNames = [
+    'shortofgoal.aml',
+    'UCcomparison.aml',
+    'YRLzerowaste.aml',
+    'zerowastehistory.aml',
+  ]
 
   articleNames.forEach(name => {
     return createPage({

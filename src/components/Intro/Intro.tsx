@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'react-emotion'
+import Recycle from '../../images/recycle.svg'
 
 const OutDiv = styled('div')`
   display: flex;
@@ -7,6 +8,9 @@ const OutDiv = styled('div')`
   justify-content: center;
   align-items: center;
   text-align: center;
+  background-color: #fffcf5;
+  background-image: url(${Recycle});
+  background-size: cover;
 `
 
 const Title = styled('div')`
@@ -16,6 +20,7 @@ const Title = styled('div')`
   line-height: 97px;
   font-weight: bold;
   color: #4c4037;
+  margin-top: 3vh;
   @media only screen and (max-width: 800px) {
     font-size: 40px;
     line-height: 52px;
@@ -57,6 +62,7 @@ const Content = styled('div')`
   padding: 5px;
   padding-bottom: 20px;
   color: #4c4037;
+  margin-bottom: 3vh;
   @media only screen and (max-width: 800px) {
     font-size: 16px;
     line-height: 23px;

@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'react-emotion'
+import { css } from 'react-emotion'
 import Picture from '../../images/graybox.png'
+import Recycle from '../../images/recycle.svg'
 
 const OutDiv = styled('div')`
   display: flex;
@@ -11,8 +13,11 @@ const OutDiv = styled('div')`
   align-items: center;
   text-align: center;
   color: #fefbf4;
-  background-color: black;
+  background-color: #6d786a;
+  background-image: url(${Recycle});
   flex-direction: column;
+  padding-top: 3vh;
+  padding-bottom: 3vh;
   @media only screen and (max-width: 800px) {
     font-size: 37px;
     line-height: 48px;
@@ -106,11 +111,16 @@ const BoxContent = styled('div')`
   }
 `
 
+const BoxImg = props => css`
+  background: ${props.pic};
+`
+
 const BoxImage = styled('div')`
   padding: 15px;
   margin: 15px;
   flex-grow: 2;
   background: url(${Picture});
+  ${BoxImg}
   padding: 15px;
   @media only screen and (max-width: 800px) {
     flex-direction: column;
@@ -128,34 +138,37 @@ const BoxImage = styled('div')`
   }
 `
 
-export default class Card extends React.Component {
+interface CardProps {
+  topic: string
+  topicdesc: string
+  pictures: any
+  titles: string[]
+  descs: string[]
+}
+
+export default class Card extends React.Component<CardProps> {
   render() {
     return (
       <OutDiv>
-        <p>INSERT TOPIC 1 HERE</p>
+        <p>{this.props.topic}</p>
         <Blurb>
-          <p>
-            blurb here blurb here blurb here blurb here blurb here blurb here
-            blurb here blurb here blurb here blurb here blurb here blurb here
-            blurb here blurb here blurb here blurb here blurb here blurb here
-            blurb here blurb here blurb here blurb here blurb here blurb here
-            blurb here blurb here blurb here
-          </p>
+          <p>{this.props.topicdesc}</p>
         </Blurb>
-        <Box>
-          <BoxImage />
-          <InnerBox>
-            <BoxTitle>
-              Here be a title here be a title here be a title here be a title
-              here
-            </BoxTitle>
-            <BoxContent>
-              stop leaving the faucet on while you brush your teeth that is so
-              wasteful geez stop leaving the faucet on while you brush your
-              teeth that is so wasteful geez
-            </BoxContent>
-          </InnerBox>
-        </Box>
+        {function() {
+          var returnarr = []
+          for (var i = 0; i < this.props.titles.length; i++) {
+            returnarr.push(
+              <Box>
+                <BoxImage pic={this.props.pictures[i]} />
+                <InnerBox>
+                  <BoxTitle>{this.props.titles[i]}</BoxTitle>
+                  <BoxContent>{this.props.descs[i]}</BoxContent>
+                </InnerBox>
+              </Box>
+            )
+          }
+          return returnarr
+        }}
       </OutDiv>
     )
   }
