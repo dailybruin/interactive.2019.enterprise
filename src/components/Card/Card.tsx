@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'react-emotion'
 import { css } from 'react-emotion'
 import Picture from '../../images/graybox.png'
+import { Link } from 'gatsby'
 
 const OutDiv = styled('div')`
   display: flex;
@@ -14,6 +15,7 @@ const OutDiv = styled('div')`
   color: #fefbf4;
   flex-direction: column;
   padding: 1.5vh;
+  margin-bottom: 7vh;
   @media only screen and (max-width: 800px) {
     font-size: 37px;
     line-height: 48px;
@@ -34,7 +36,7 @@ const Blurb = styled('p')`
     width: 70%;
   }
 `
-const Box = styled('div')`
+const Box = styled(Link)`
   display: flex;
   flex-direction: row-reverse;
   background-color: #6d786a;
@@ -42,7 +44,7 @@ const Box = styled('div')`
   box-shadow: 0 0 5px 2px #282a2d;
   margin: 10px;
   transition: 0.3s;
-
+  text-decoration: none;
   &:hover {
     box-shadow: 0 0 5px 3px #282a2d;
   }
@@ -118,7 +120,7 @@ const BoxImage = styled('div')`
   padding: 15px;
   margin: 15px;
   flex-grow: 2;
-  background: url(${Picture});
+  /* background: url(${Picture}); */
   ${BoxImg}
   padding: 15px;
   @media only screen and (max-width: 800px) {
@@ -141,6 +143,7 @@ interface CardProps {
   CategoryName: string
   // TopicDesc: string
   Cards: {
+    PageLink: string
     ImageURL: string
     Title: string
     Contributor: string
@@ -159,7 +162,7 @@ export default class Card extends React.Component<CardProps> {
           <p>{this.props.TopicDesc}</p>
         </Blurb> */}
         {this.props.Cards.map(card => (
-          <Box>
+          <Box to={`/${card.PageLink}`}>
             <BoxImage pic={card.ImageURL} />
             <InnerBox>
               <BoxTitle>{card.Title}</BoxTitle>
