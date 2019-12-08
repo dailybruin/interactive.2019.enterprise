@@ -42,11 +42,13 @@ export const query = graphql`
 
 const IndexPage = ({ data }) => (
   <>
-    {console.log(data)}
+    {console.log(data.kerckhoffArticle.Categories)}
     <Head {...data.site.siteMetadata} />
     <Cover />
     <Intro />
-    <Card />
+    {data.kerckhoffArticle.Categories.map(category => (
+      <Card {...category} />
+    ))}
     {/* <Article dropcap={true} content={data.kerckhoffArticle.content} /> */}
     <Footer
       developers="Henry Trinh, Karl Huang, Jay Park, Matthew Ko, Max Wu"

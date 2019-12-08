@@ -16,8 +16,7 @@ const OutDiv = styled('div')`
   background-color: #6d786a;
   background-image: url(${Recycle});
   flex-direction: column;
-  padding-top: 3vh;
-  padding-bottom: 3vh;
+  padding: 1.5vh;
   @media only screen and (max-width: 800px) {
     font-size: 37px;
     line-height: 48px;
@@ -44,8 +43,12 @@ const Box = styled('div')`
   background-color: #6d786a;
   width: 60%;
   box-shadow: 0 0 5px 2px #282a2d;
-  margin-right: 10px;
-  margin-bottom: 20px;
+  margin: 10px;
+  transition: 0.3s;
+
+  &:hover {
+    box-shadow: 0 0 5px 3px #282a2d;
+  }
   @media only screen and (max-width: 800px) {
     width: 75%;
     margin-right: 0px;
@@ -101,8 +104,7 @@ const BoxContent = styled('div')`
   align-items: center;
   color: #fffcf5;
   text-align: left;
-  padding-left: 20px;
-  padding-bottom: 15px;
+  padding: 10px 10px;
   @media only screen and (max-width: 800px) {
     font-size: 13px;
     line-height: 19px;
@@ -139,36 +141,35 @@ const BoxImage = styled('div')`
 `
 
 interface CardProps {
-  topic: string
-  topicdesc: string
-  pictures: any
-  titles: string[]
-  descs: string[]
+  CategoryName: string
+  // TopicDesc: string
+  Cards: {
+    ImageURL: string
+    Title: string
+    Contributor: string
+    Blurb: string
+  }[]
 }
+
+const TITLE_TO_LINK_MAPPING = {}
 
 export default class Card extends React.Component<CardProps> {
   render() {
     return (
       <OutDiv>
-        <p>{this.props.topic}</p>
-        <Blurb>
-          <p>{this.props.topicdesc}</p>
-        </Blurb>
-        {function() {
-          var returnarr = []
-          for (var i = 0; i < this.props.titles.length; i++) {
-            returnarr.push(
-              <Box>
-                <BoxImage pic={this.props.pictures[i]} />
-                <InnerBox>
-                  <BoxTitle>{this.props.titles[i]}</BoxTitle>
-                  <BoxContent>{this.props.descs[i]}</BoxContent>
-                </InnerBox>
-              </Box>
-            )
-          }
-          return returnarr
-        }}
+        <p>{this.props.CategoryName}</p>
+        {/* <Blurb>
+          <p>{this.props.TopicDesc}</p>
+        </Blurb> */}
+        {this.props.Cards.map(card => (
+          <Box>
+            <BoxImage pic={card.ImageURL} />
+            <InnerBox>
+              <BoxTitle>{card.Title}</BoxTitle>
+              <BoxContent>{card.Blurb}</BoxContent>
+            </InnerBox>
+          </Box>
+        ))}
       </OutDiv>
     )
   }
