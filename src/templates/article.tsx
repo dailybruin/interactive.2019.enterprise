@@ -123,7 +123,7 @@ const ArticlePage = ({ data }) => (
           margin-bottom: 0px;
           color: #fffcf5;
         `}
-        developers="Henry Trinh, Karl Huang, Jay Park, Matthew Ko, Max Wu"
+        developers="Henry Trinh, Karl Huang, Jay Park, Matthew Ko, Max Wu, Lauren Ho"
         copyrightYear={2019}
       />
     </Wrapper>

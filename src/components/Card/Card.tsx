@@ -140,7 +140,6 @@ const BoxImage = styled('div')`
   padding: 15px;
   margin: 15px;
   flex-grow: 2;
-  /* background: url(${Picture}); */
   ${BoxImg}
   padding: 15px;
   @media only screen and (max-width: 800px) {
