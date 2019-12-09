@@ -55,6 +55,25 @@ const Box = styled(Link)`
   }
 `
 
+const BoxExternal = styled('a')`
+  display: flex;
+  flex-direction: row-reverse;
+  background-color: #6d786a;
+  width: 60%;
+  box-shadow: 0 0 5px 0px #282a2d;
+  margin: 10px;
+  transition: 0.3s;
+  text-decoration: none;
+  &:hover {
+    box-shadow: 0 0 5px 1.5px #282a2d;
+  }
+  @media only screen and (max-width: 800px) {
+    width: 75%;
+    margin-right: 0px;
+    flex-direction: column;
+  }
+`
+
 const InnerBox = styled('div')`
   background-color: #6d786a;
   width: 60%;
@@ -153,6 +172,8 @@ interface CardProps {
 
 const TITLE_TO_LINK_MAPPING = {}
 
+const is_external = href => !(href[0] == "/");
+
 export default class Card extends React.Component<CardProps> {
   componentDidMount() {
     console.log(this.props.Cards)
@@ -162,13 +183,21 @@ export default class Card extends React.Component<CardProps> {
       <OutDiv id={this.props.CategoryName.replace(/\s/g, '')}>
         <p>{this.props.CategoryName}</p>
         {this.props.Cards.map(card => (
-          <Box to={`/${card.PageLink}`}>
-            <BoxImage pic={card.ImageURL} />
-            <InnerBox>
-              <BoxTitle>{card.Title}</BoxTitle>
-              <BoxContent>{card.Blurb}</BoxContent>
-            </InnerBox>
-          </Box>
+          is_external(card.PageLink)
+            ? <BoxExternal href={card.PageLink}>
+              <BoxImage pic={card.ImageURL} />
+              <InnerBox>
+                <BoxTitle>{card.Title}</BoxTitle>
+                <BoxContent>{card.Blurb}</BoxContent>
+              </InnerBox>
+            </BoxExternal>
+            : <Box to={card.PageLink}>
+              <BoxImage pic={card.ImageURL} />
+              <InnerBox>
+                <BoxTitle>{card.Title}</BoxTitle>
+                <BoxContent>{card.Blurb}</BoxContent>
+              </InnerBox>
+            </Box>
         ))}
       </OutDiv>
     )
