@@ -113,14 +113,15 @@ const BoxContent = styled('div')`
 `
 
 const BoxImg = props => css`
-  background: ${props.pic};
+  background: url(${props.pic});
+  background-size: cover;
 `
 
 const BoxImage = styled('div')`
   padding: 15px;
   margin: 15px;
   flex-grow: 2;
-  background: url(${Picture});
+  /* background: url(${Picture}); */
   ${BoxImg}
   padding: 15px;
   @media only screen and (max-width: 800px) {
@@ -153,13 +154,13 @@ interface CardProps {
 const TITLE_TO_LINK_MAPPING = {}
 
 export default class Card extends React.Component<CardProps> {
+  componentDidMount() {
+    console.log(this.props.Cards)
+  }
   render() {
     return (
       <OutDiv id={this.props.CategoryName.replace(/\s/g, '')}>
         <p>{this.props.CategoryName}</p>
-        {/* <Blurb>
-          <p>{this.props.TopicDesc}</p>
-        </Blurb> */}
         {this.props.Cards.map(card => (
           <Box to={`/${card.PageLink}`}>
             <BoxImage pic={card.ImageURL} />

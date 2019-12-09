@@ -73,7 +73,7 @@ const IndexPage = ({ data }) => (
         `}
       />
       {data.kerckhoffArticle.Categories.map(category => (
-        <Card {...category} id={category.CategoryName.replace(' ', '')} />
+        <Card {...category} />
       ))}
       <Divide />
       <Footer
