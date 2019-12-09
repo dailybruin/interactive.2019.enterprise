@@ -2,15 +2,17 @@ const slugify = require('slugify')
 
 const siteName = 'Enterprise Fall 2019: A Wasted Opportunity'
 const description =
-  "The University of California committed to reaching zero waste nearly 13 years ago. Campuses have made progress, but won't hit zero waste by the 2020 deadline."
+  'The University of California committed to reaching zero waste 12 years ago. But it will not hit zero waste by the deadline.'
 const image =
-  'https://chancellor.ucla.edu/wp-content/uploads/2018/07/ChancellorBlock_1366x912_acf_cropped.jpg'
+  'https://assets.dailybruin.com/images/interactive.2019.enterprise/enterprise illo-7a0a9ab90ce71be70b09faaf7f86945e.jpg'
 const year = '2019'
 
-const url = `https://features.dailybruin.com/2019/wasted-opportunity/`
-// const url = `https://features.dailybruin.com/${year}/${slugify(siteName)}`
+const prefixPath = `/${year}/wasted-opportunity`
+
+const url = `https://features.dailybruin.com${prefixPath}/`
 
 module.exports = {
+  pathPrefix: prefixPath,
   siteMetadata: {
     siteName,
     description,
@@ -19,18 +21,6 @@ module.exports = {
   },
   pathPrefix: '/2019/wasted-opportunity',
   plugins: [
-    {
-      resolve: 'gatsby-plugin-manifest',
-      options: {
-        name: siteName,
-        short_name: siteName,
-        start_url: '/',
-        background_color: '#ffffff',
-        theme_color: '#ffffff',
-        display: 'browser',
-        icon: 'src/images/db-logo.png',
-      },
-    },
     'gatsby-plugin-typescript',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-emotion',

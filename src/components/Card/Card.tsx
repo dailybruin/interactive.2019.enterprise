@@ -55,6 +55,25 @@ const Box = styled(Link)`
   }
 `
 
+const BoxExternal = styled('a')`
+  display: flex;
+  flex-direction: row-reverse;
+  background-color: #6d786a;
+  width: 60%;
+  box-shadow: 0 0 5px 0px #282a2d;
+  margin: 10px;
+  transition: 0.3s;
+  text-decoration: none;
+  &:hover {
+    box-shadow: 0 0 5px 1.5px #282a2d;
+  }
+  @media only screen and (max-width: 800px) {
+    width: 75%;
+    margin-right: 0px;
+    flex-direction: column;
+  }
+`
+
 const InnerBox = styled('div')`
   background-color: #6d786a;
   width: 60%;
@@ -141,7 +160,12 @@ interface CardProps {
 
 const TITLE_TO_LINK_MAPPING = {}
 
+const is_external = href => !(href[0] == "/");
+
 export default class Card extends React.Component<CardProps> {
+  componentDidMount() {
+    console.log(this.props.Cards)
+  }
   render() {
     return (
       <OutDiv id={this.props.CategoryName.replace(/\s/g, '')}>
