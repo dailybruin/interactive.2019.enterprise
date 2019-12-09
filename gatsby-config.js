@@ -19,7 +19,6 @@ module.exports = {
     url,
     image,
   },
-  pathPrefix: '/2019/wasted-opportunity',
   plugins: [
     'gatsby-plugin-typescript',
     'gatsby-plugin-react-helmet',

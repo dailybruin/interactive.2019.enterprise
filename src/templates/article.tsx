@@ -2,13 +2,12 @@ import * as React from 'react'
 import { graphql } from 'gatsby'
 import { css } from 'react-emotion'
 import styled from 'react-emotion'
-import { Article, Footer, Image, PullQuote } from '@dailybruin/lux'
+import { Article, Footer, Image, PullQuote, Video } from '@dailybruin/lux'
 import Heading from '../components/Heading'
 import PieChart from '../components/Graphs/PieChart'
 import BarChart from '../components/Graphs/BarChart'
 import Recycle from '../images/recycle.svg'
 import ArticleNav from '../components/ArticleNav/ArticleNav'
-import { Video } from '../components/Video'
 
 export const query = graphql`
   query($name: String) {
