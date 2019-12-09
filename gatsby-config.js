@@ -1,7 +1,7 @@
 const slugify = require('slugify')
 
 const siteName = 'Enterprise Fall 2019: A Wasted Opportunity'
-const description = "The University of California committed to reaching zero waste nearly 13 years ago. Why won't campuses hit zero waste by the deadline?"
+const description = "The University of California committed to reaching zero waste 12 years ago. But it will not hit zero waste by the deadline."
 const image =
   'https://assets.dailybruin.com/images/interactive.2019.enterprise/enterprise illo-7a0a9ab90ce71be70b09faaf7f86945e.jpg'
 const year = '2019'
