@@ -3,6 +3,7 @@ import styled from 'react-emotion'
 import { css } from 'react-emotion'
 import Picture from '../../images/graybox.png'
 import { Link } from 'gatsby'
+import { cardInnerPadding } from '@dailybruin/lux/src/globals/mainsiteGlobalStyles'
 
 const OutDiv = styled('div')`
   display: flex;
@@ -50,7 +51,6 @@ const Box = styled(Link)`
   }
   @media only screen and (max-width: 800px) {
     width: 75%;
-    margin-right: 0px;
     flex-direction: column;
   }
 `
@@ -59,7 +59,6 @@ const InnerBox = styled('div')`
   background-color: #6d786a;
   width: 60%;
   padding: 10px;
-  margin-right: 10px;
   display: flex;
   flex-direction: column;
   @media only screen and (max-width: 800px) {
@@ -79,9 +78,7 @@ const BoxTitle = styled('div')`
   align-items: left;
   color: #fffcf5;
   text-align: left;
-  padding-left: 20px;
-  padding-top: 15px;
-  padding-bottom: 20px;
+  padding: 10px;
   @media only screen and (max-width: 800px) {
     font-size: 18px;
     line-height: 23px;
@@ -112,31 +109,23 @@ const BoxContent = styled('div')`
   }
 `
 
-const BoxImg = props => css`
-  background: ${props.pic};
-`
-
 const BoxImage = styled('div')`
   padding: 15px;
   margin: 15px;
   flex-grow: 2;
-  /* background: url(${Picture}); */
-  ${BoxImg}
   padding: 15px;
-  @media only screen and (max-width: 800px) {
+  /* @media only screen and (max-width: 800px) {
     flex-direction: column;
     padding: 20%;
     width: 50%;
-    margin: auto;
     margin-top: 20px;
   }
   @media only screen and (max-width: 414px) {
     flex-direction: column;
     padding: 35%;
     width: 80%;
-    margin: auto;
     margin-top: 20px;
-  }
+  } */
 `
 
 interface CardProps {
@@ -160,15 +149,82 @@ export default class Card extends React.Component<CardProps> {
         {/* <Blurb>
           <p>{this.props.TopicDesc}</p>
         </Blurb> */}
-        {this.props.Cards.map(card => (
-          <Box to={`/${card.PageLink}`}>
-            <BoxImage pic={card.ImageURL} />
-            <InnerBox>
-              <BoxTitle>{card.Title}</BoxTitle>
-              <BoxContent>{card.Blurb}</BoxContent>
-            </InnerBox>
-          </Box>
-        ))}
+        {this.props.Cards.map(card => {
+          return card.PageLink == 'external' ? (
+            <a
+              href={
+                card.PageLink == 'external'
+                  ? 'https://dailybruin.com/2019/12/09/gallery-heres-how-ucla-mixed-recycling-gets-processed/'
+                  : ''
+              }
+              className={css`
+                text-decoration: none;
+                color: #fefbf4;
+                display: flex;
+                flex-direction: row-reverse;
+                background-color: #6d786a;
+                width: 60%;
+                box-shadow: 0 0 5px 0px #282a2d;
+                margin: 10px;
+                transition: 0.3s;
+                text-decoration: none;
+                &:hover {
+                  box-shadow: 0 0 5px 1.5px #282a2d;
+                }
+                @media only screen and (max-width: 800px) {
+                  width: 75%;
+                  margin-right: 0px;
+                  flex-direction: column;
+                }
+              `}
+            >
+              {' '}
+              <BoxImage>
+                <div
+                  className={css`
+                    height: 100%;
+                    width: 100%;
+                    @media only screen and (max-width: 800px) {
+                      height: 200px;
+                      width: 100%;
+                    }
+                    background: url(${card.ImageURL});
+                    background-size: cover;
+                    background-position: bottom;
+                  `}
+                />
+              </BoxImage>
+              {/* <img src={card.ImageURL} /> */}
+              <InnerBox>
+                <BoxTitle>{card.Title}</BoxTitle>
+                <BoxContent>{card.Blurb}</BoxContent>
+              </InnerBox>
+            </a>
+          ) : (
+            <Box to={`${card.PageLink}`}>
+              <BoxImage>
+                <div
+                  className={css`
+                    height: 100%;
+                    width: 100%;
+                    @media only screen and (max-width: 800px) {
+                      height: 200px;
+                      width: 100%;
+                    }
+                    background: url(${card.ImageURL});
+                    background-size: cover;
+                    background-position: bottom;
+                  `}
+                />
+              </BoxImage>
+              {/* <img src={card.ImageURL} /> */}
+              <InnerBox>
+                <BoxTitle>{card.Title}</BoxTitle>
+                <BoxContent>{card.Blurb}</BoxContent>
+              </InnerBox>
+            </Box>
+          )
+        })}
       </OutDiv>
     )
   }

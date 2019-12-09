@@ -2,12 +2,13 @@ import * as React from 'react'
 import { graphql } from 'gatsby'
 import { css } from 'react-emotion'
 import styled from 'react-emotion'
-import { Article, Footer, Image, PullQuote, Video } from '@dailybruin/lux'
+import { Article, Footer, Image, PullQuote } from '@dailybruin/lux'
 import Heading from '../components/Heading'
 import PieChart from '../components/Graphs/PieChart'
 import BarChart from '../components/Graphs/BarChart'
 import Recycle from '../images/recycle.svg'
 import ArticleNav from '../components/ArticleNav/ArticleNav'
+import { Video } from '../components/Video'
 
 export const query = graphql`
   query($name: String) {
@@ -40,6 +41,34 @@ const Divide = styled('hr')`
   margin-top: 7vh;
 `
 
+function VIDEO(props) {
+  return (
+    <div>
+      <div
+        className={css`
+          margin-bottom: 10px;
+          width: 100%;
+          height: 400px;
+          @media only screen and (max-width: 800px) {
+            height: 300px;
+            width: 100%;
+          }
+        `}
+      >
+        <Video videoId={props.videoId} description={props.description} />
+      </div>
+      <div
+        className={css`
+          font-size: 14px;
+          margin-bottom: 30px;
+        `}
+      >
+        {props.description}
+      </div>
+    </div>
+  )
+}
+
 const ArticlePage = ({ data }) => (
   <>
     {/* <Head {...data.site.siteMetadata} /> */}
@@ -50,9 +79,15 @@ const ArticlePage = ({ data }) => (
         Headline={
           data.kerckhoffArticle.Headline != null
             ? data.kerckhoffArticle.Headline
-            : 'HEADLINE'
+            : 'FILLER HEADLINE'
         }
         Contributor={data.kerckhoffArticle.Author}
+      />
+      <img
+        className={css`
+          height: 600px;
+        `}
+        src={data.kerckhoffArticle.ImageURL}
       />
       <Article
         dropcap={false}
@@ -70,14 +105,14 @@ const ArticlePage = ({ data }) => (
             font-size: 1.15rem;
           }
           @media only screen and (max-width: 800px) {
-            max-width: 80%;
+            max-width: 90%;
           }
         `}
         customTypeComponentMapping={{
           heading: Heading,
           image: Image,
           pullquote: PullQuote,
-          video: Video,
+          video: VIDEO,
           piechart: PieChart,
           barchart: BarChart,
         }}

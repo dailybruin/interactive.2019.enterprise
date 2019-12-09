@@ -53,7 +53,11 @@ const dataFeb = {
 function BarChart(props) {
   defaults.global.defaultFontColor = '#fefbf4'
   return (
-    <div>
+    <div
+      className={css`
+        margin: 30px 0;
+      `}
+    >
       <div
         className={css`
           height: 500px;
@@ -80,7 +84,7 @@ function BarChart(props) {
             },
             title: {
               display: true,
-              text: props.title,
+              text: 'February 2019 YRL Total Landfill Waste Composition',
             },
           }}
         />
@@ -111,7 +115,7 @@ function BarChart(props) {
             },
             title: {
               display: true,
-              text: props.title,
+              text: 'May 2019 YRL Total Landfill Waste Composition',
             },
           }}
         />

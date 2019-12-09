@@ -1,5 +1,6 @@
 import React from 'react'
 import { Pie } from 'react-chartjs-2'
+import { css } from 'emotion'
 
 var data = {
   datasets: [
@@ -43,7 +44,25 @@ var data = {
 }
 
 function PieChart() {
-  return <Pie data={data} />
+  return (
+    <div
+      className={css`
+        margin: 30px 0px;
+        height: 400px;
+      `}
+    >
+      <Pie
+        data={data}
+        options={{
+          maintainAspectRatio: false,
+          title: {
+            display: true,
+            text: 'Young Research Library Waste Stream Percentages',
+          },
+        }}
+      />
+    </div>
+  )
 }
 
 export default PieChart

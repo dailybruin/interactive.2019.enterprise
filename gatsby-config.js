@@ -1,12 +1,14 @@
 const slugify = require('slugify')
 
-const siteName = 'SITE_NAME'
-const description = 'SITE_DESCRIPTION'
+const siteName = 'Enterprise Fall 2019: A Wasted Opportunity'
+const description =
+  "The University of California committed to reaching zero waste nearly 13 years ago. Campuses have made progress, but won't hit zero waste by the 2020 deadline."
 const image =
   'https://chancellor.ucla.edu/wp-content/uploads/2018/07/ChancellorBlock_1366x912_acf_cropped.jpg'
-const year = 'CURRENT_YEAR'
+const year = '2019'
 
-const url = `https://features.dailybruin.com/${year}/${slugify(siteName)}`
+const url = `https://features.dailybruin.com/2019/wasted-opportunity/`
+// const url = `https://features.dailybruin.com/${year}/${slugify(siteName)}`
 
 module.exports = {
   siteMetadata: {
@@ -15,6 +17,7 @@ module.exports = {
     url,
     image,
   },
+  pathPrefix: '/2019/wasted-opportunity',
   plugins: [
     {
       resolve: 'gatsby-plugin-manifest',

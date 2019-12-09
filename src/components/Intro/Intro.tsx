@@ -11,6 +11,7 @@ const OutDiv = styled('div')`
   background-color: #fffcf5;
   background-image: url(${Recycle});
   background-size: cover;
+  padding: 0 2%;
 `
 
 const Title = styled('div')`
