@@ -67,6 +67,11 @@ const IndexPage = ({ data }) => (
       Explainer={data.kerckhoffArticle.Explainer}
     />
     <Page>
+      <div
+        className={css`
+          height: 100px;
+        `}
+      />
       {data.kerckhoffArticle.Categories.map(category => (
         <Card {...category} id={category.CategoryName.replace(' ', '')} />
       ))}

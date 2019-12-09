@@ -55,13 +55,13 @@ const ArticlePage = ({ data }) => (
         Contributor={data.kerckhoffArticle.Author}
       />
       <Article
-        dropcap={true}
+        dropcap={false}
         content={data.kerckhoffArticle.content}
         style={css`
           color: #fffcf5;
-          max-width: 60%;
+          max-width: 50%;
           font-family: 'Arial';
-          line-height: 38px;
+          line-height: 25px;
           font-size: 1rem;
           min-width: 300px;
           /* background: #6d786a; */

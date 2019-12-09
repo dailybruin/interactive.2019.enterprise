@@ -43,8 +43,8 @@ export default class ArticleNav extends React.Component {
         <Wrapper>
           <PageTitle to="/">A Wasted Opportunity</PageTitle>
           <RightNav>
-            <NavItem to="/#ZeroWasteatUCLA">Zero Waste at UCLA</NavItem>
-            <NavItem to="/#ZeroWasteintheUCSystem">
+            <NavItem to="#ZeroWasteatUCLA">Zero Waste at UCLA</NavItem>
+            <NavItem to="#ZeroWasteintheUCSystem">
               Zero Waste in the UC System
             </NavItem>
           </RightNav>

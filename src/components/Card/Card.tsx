@@ -41,12 +41,12 @@ const Box = styled(Link)`
   flex-direction: row-reverse;
   background-color: #6d786a;
   width: 60%;
-  box-shadow: 0 0 5px 2px #282a2d;
+  box-shadow: 0 0 5px 0px #282a2d;
   margin: 10px;
   transition: 0.3s;
   text-decoration: none;
   &:hover {
-    box-shadow: 0 0 5px 3px #282a2d;
+    box-shadow: 0 0 5px 1.5px #282a2d;
   }
   @media only screen and (max-width: 800px) {
     width: 75%;
@@ -141,7 +141,6 @@ const BoxImage = styled('div')`
 
 interface CardProps {
   CategoryName: string
-  // TopicDesc: string
   Cards: {
     PageLink: string
     ImageURL: string
@@ -156,7 +155,7 @@ const TITLE_TO_LINK_MAPPING = {}
 export default class Card extends React.Component<CardProps> {
   render() {
     return (
-      <OutDiv>
+      <OutDiv id={this.props.CategoryName.replace(/\s/g, '')}>
         <p>{this.props.CategoryName}</p>
         {/* <Blurb>
           <p>{this.props.TopicDesc}</p>
