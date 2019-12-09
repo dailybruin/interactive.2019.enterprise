@@ -22,6 +22,7 @@ const Wrapper = styled('div')`
 const HeadTitle = styled('p')`
   font-size: 48px;
   margin-top: 5vh;
+  text-align: center;
   @media only screen and (max-width: 800px) {
     font-size: 30px;
     line-height: 45px;
