@@ -6,9 +6,12 @@ const image =
   'https://assets.dailybruin.com/images/interactive.2019.enterprise/enterprise illo-7a0a9ab90ce71be70b09faaf7f86945e.jpg'
 const year = '2019'
 
-const url = `https://features.dailybruin.com/${year}/${slugify(siteName)}`
+const prefixPath = `/${year}/wasted-opportunity`;
+
+const url = `https://features.dailybruin.com${prefixPath}/`
 
 module.exports = {
+  pathPrefix: prefixPath,
   siteMetadata: {
     siteName,
     description,
