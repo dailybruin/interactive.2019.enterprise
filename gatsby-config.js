@@ -1,10 +1,10 @@
 const slugify = require('slugify')
 
-const siteName = 'SITE_NAME'
+const siteName = 'Wasted Opportunity'
 const description = 'SITE_DESCRIPTION'
 const image =
-  'https://chancellor.ucla.edu/wp-content/uploads/2018/07/ChancellorBlock_1366x912_acf_cropped.jpg'
-const year = 'CURRENT_YEAR'
+  'https://assets.dailybruin.com/images/interactive.2019.enterprise/enterprise illo-7a0a9ab90ce71be70b09faaf7f86945e.jpg'
+const year = '2019'
 
 const url = `https://features.dailybruin.com/${year}/${slugify(siteName)}`
 
@@ -16,18 +16,6 @@ module.exports = {
     image,
   },
   plugins: [
-    {
-      resolve: 'gatsby-plugin-manifest',
-      options: {
-        name: siteName,
-        short_name: siteName,
-        start_url: '/',
-        background_color: '#ffffff',
-        theme_color: '#ffffff',
-        display: 'browser',
-        icon: 'src/images/db-logo.png',
-      },
-    },
     'gatsby-plugin-typescript',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-emotion',
