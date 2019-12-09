@@ -13,11 +13,13 @@ const Wrapper = styled('div')`
   font-family: IBM Plex Sans;
   line-height: 62px;
   align-items: center;
+  width: 65%;
 `
 
 const HeadTitle = styled('p')`
   font-size: 48px;
   margin-top: 5vh;
+  text-align: center;
 `
 
 const Contrib = styled('p')`
