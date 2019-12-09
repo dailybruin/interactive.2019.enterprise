@@ -190,7 +190,7 @@ export default class Card extends React.Component<CardProps> {
                 <BoxContent>{card.Blurb}</BoxContent>
               </InnerBox>
             </BoxExternal>
-            : <Box to={`${card.PageLink}`}>
+            : <Box to={`/${card.PageLink}`}>
               <BoxImage pic={card.ImageURL} />
               <InnerBox>
                 <BoxTitle>{card.Title}</BoxTitle>
